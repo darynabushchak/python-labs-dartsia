@@ -7,5 +7,5 @@ chairs = [
     Chair.get_instance(),
 ]
 
-for _ in chairs:
-    print(_)
+for chair in chairs:
+    print(chair.__str__())
