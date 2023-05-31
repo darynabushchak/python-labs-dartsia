@@ -3,17 +3,19 @@ from .chair import Chair
 
 class RockingChair(Chair):
     def __init__(
-            self,
-            color: set,
-            id: int,
-            material: str,
-            max_weight: int,
-            owner: str,
-            current_slope_in_degrees: int,
-            max_height,
-            current_height
+        self,
+        color: set,
+        id: int,
+        material: str,
+        max_weight: int,
+        owner: str,
+        current_slope_in_degrees: int,
+        max_height,
+        current_height,
     ):
-        super().__init__(color, id, material, max_weight, owner, max_height, current_height)
+        super().__init__(
+            color, id, material, max_weight, owner, max_height, current_height
+        )
         self.current_slope_in_degrees = current_slope_in_degrees
         self.max_height = max_height
         self.current_height = current_height

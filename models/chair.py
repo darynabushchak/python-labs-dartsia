@@ -2,24 +2,37 @@ from abc import ABC, abstractmethod
 
 
 class Chair(ABC):
-    def __init__(
-            self,
-            color: set,
-            id=1,
-            material=None,
-            max_weight=None,
-            owner=None,
-            max_height=None,
-            current_height=None):
-        """
-        Initializes a new instance of the Chair class.
+    """
+    Abstract base class representing a chair.
 
-        Args:
-            material (str): The material of the chair.
-            max_weight (float): The maximum weight capacity of the chair.
-            owner (str, optional): The current owner of the chair (default is None).
-            id (int, optional): The identifier for the chair (default is 1).
-        """
+    Attributes:
+    id (int): The unique identifier of the chair.
+    material (str): The material of the chair.
+    max_weight (float): The maximum weight that the chair can support.
+    owner (str): The owner of the chair.
+    current_height (float): The current height of the chair.
+    max_height (float): The maximum height of the chair.
+    color (set): The set of colors of the chair.
+
+    Methods:
+    adjust_position(value): Abstract method to adjust the position of the chair.
+    adjust_height(value): Adjusts the height of the chair.
+    get_instance(): Returns a singleton instance of the chair.
+    __str__(): Returns a string representation of the chair.
+    __repr__(): Returns a string representation of the chair suitable for reproduction.
+
+    """
+    def __init__(
+        self,
+        color: set,
+        id=1,
+        material=None,
+        max_weight=None,
+        owner=None,
+        max_height=None,
+        current_height=None,
+    ):
+
         self.id = id
         self.material = material
         self.max_weight = max_weight
@@ -51,8 +64,10 @@ class Chair(ABC):
         return cls.__instance
 
     def __str__(self):
-        return f"\n{self.__class__.__name__} (material - {self.material}, " \
-               f"max weight that the chair can support - {self.max_weight})"
+        return (
+            f"\n{self.__class__.__name__} (material - {self.material}, "
+            f"max weight that the chair can support - {self.max_weight})"
+        )
 
     def __repr__(self):
         return (

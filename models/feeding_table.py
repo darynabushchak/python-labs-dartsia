@@ -3,16 +3,11 @@ from .chair import Chair
 
 class FeedingTable(Chair):
     def __init__(
-            self,
-            color: set,
-            id,
-            material,
-            max_weight,
-            owner,
-            max_height,
-            current_height
+        self, color: set, id, material, max_weight, owner, max_height, current_height
     ):
-        super().__init__(color, id, material, max_weight, owner, max_height, current_height)
+        super().__init__(
+            color, id, material, max_weight, owner, max_height, current_height
+        )
         self.max_height = max_height
         self.current_height = current_height
 
