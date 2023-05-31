@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from redundant_height_exception import RedundantHeightException
+
 
 class Chair(ABC):
     """
@@ -54,8 +56,7 @@ class Chair(ABC):
         if value <= self.max_height - self.current_height:
             self.current_height += value
         else:
-            self.current_height = self.max_height
-        return self.current_height
+            raise RedundantHeightException("the height is not adjustable. redundant height!")
 
     @classmethod
     def get_instance(cls):
