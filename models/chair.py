@@ -24,15 +24,16 @@ class Chair(ABC):
     __repr__(): Returns a string representation of the chair suitable for reproduction.
 
     """
+
     def __init__(
-        self,
-        color: set,
-        id=1,
-        material=None,
-        max_weight=None,
-        owner=None,
-        max_height=None,
-        current_height=None,
+            self,
+            color: set,
+            id=1,
+            material=None,
+            max_weight=None,
+            owner=None,
+            max_height=None,
+            current_height=None,
     ):
 
         self.id = id

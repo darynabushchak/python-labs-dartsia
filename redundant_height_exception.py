@@ -19,5 +19,7 @@ def logged(exception, mode):
                 elif mode == "file":
                     logger.addHandler(logging.FileHandler("log.txt"))
                 logger.exception(str(e))
+
         return wrapper
+
     return decorator

@@ -4,16 +4,16 @@ from .decorators import validate_method_name
 
 class OfficeChair(Chair):
     def __init__(
-        self,
-        color: set,
-        id,
-        material,
-        max_weight,
-        owner,
-        chair_upholstery,
-        current_slope_in_degrees,
-        max_height,
-        current_height,
+            self,
+            color: set,
+            id,
+            material,
+            max_weight,
+            owner,
+            chair_upholstery,
+            current_slope_in_degrees,
+            max_height,
+            current_height,
     ):
         super().__init__(
             color, id, material, max_weight, owner, max_height, current_height
