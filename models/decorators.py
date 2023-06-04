@@ -1,4 +1,6 @@
 import re
+from functools import wraps
+import logging
 
 
 def validate_method_name(func):
@@ -9,3 +11,22 @@ def validate_method_name(func):
         return func(*args, **kwargs)
 
     return wrapper
+
+
+def logged(exception, mode):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except exception as e:
+                logger = logging.getLogger()
+                if mode == "console":
+                    logger.addHandler(logging.StreamHandler())
+                elif mode == "file":
+                    logger.addHandler(logging.FileHandler("log.txt"))
+                logger.exception(e)
+
+        return wrapper
+
+    return decorator

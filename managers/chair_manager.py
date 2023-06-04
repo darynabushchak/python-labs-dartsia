@@ -1,4 +1,5 @@
-from redundant_height_exception import RedundantHeightException, logged
+from exceptions import RedundantHeightException
+from models.decorators import logged
 
 
 class ChairManager:

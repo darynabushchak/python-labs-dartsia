@@ -1,11 +1,10 @@
-import managers.chair_manager
+from exceptions import RedundantHeightException
 from managers.chair_manager import ChairManager
 from managers.set_chair_manager import SetManager
 from models.dental_chair import DentalChair
 from models.feeding_table import FeedingTable
 from models.office_chair import OfficeChair
 from models.rocking_chair import RockingChair
-from redundant_height_exception import RedundantHeightException
 
 chair_list = ChairManager()
 chair_list.add_chair(
@@ -33,4 +32,4 @@ print("\ncolor chair at index 6: ", set_manager[5])
 try:
     chair_list.adjust_heights(40)
 except RedundantHeightException as e:
-    print(str(e))
+    print(e)
