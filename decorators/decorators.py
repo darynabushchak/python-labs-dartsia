@@ -13,13 +13,13 @@ def validate_method_name(func):
     return wrapper
 
 
-def logged(exception, mode):
+def logged(except_type, mode):
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
-            except exception as e:
+            except except_type as e:
                 logger = logging.getLogger()
                 if mode == "console":
                     logger.addHandler(logging.StreamHandler())

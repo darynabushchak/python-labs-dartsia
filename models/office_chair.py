@@ -1,5 +1,5 @@
 from .chair import Chair
-from .decorators import validate_method_name
+from decorators import validate_method_name
 
 
 class OfficeChair(Chair):
