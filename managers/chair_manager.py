@@ -1,3 +1,7 @@
+from exceptions import RedundantHeightException
+from decorators import logged
+
+
 class ChairManager:
     """
     A class representing a chair manager.
@@ -61,3 +65,8 @@ class ChairManager:
         all_condition = all(condition(chair) for chair in self.chairs)
         any_condition = any(condition(chair) for chair in self.chairs)
         return {"all": all_condition, "any": any_condition}
+
+    @logged(RedundantHeightException, mode="console")
+    def adjust_heights(self, value):
+        for chair in self.chairs:
+            chair.adjust_height(value)

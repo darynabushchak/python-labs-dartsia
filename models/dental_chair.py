@@ -3,15 +3,15 @@ from .chair import Chair
 
 class DentalChair(Chair):
     def __init__(
-        self,
-        color: set,
-        id,
-        material,
-        max_weight,
-        owner,
-        max_height,
-        current_height,
-        min_height,
+            self,
+            color: set,
+            id,
+            material,
+            max_weight,
+            owner,
+            max_height,
+            current_height,
+            min_height,
     ):
         super().__init__(
             color, id, material, max_weight, owner, max_height, current_height
